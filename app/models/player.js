@@ -29,10 +29,6 @@ function createPlayer() {
         })
       }
 
-    // static reate(){
-    //
-    // }
-
       destroy(){
         let index = store.players.indexOf(this)
         store.players.splice(index, 1)

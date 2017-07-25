@@ -17,7 +17,7 @@ $(function(){
     //let id = parseInt(this.id)
     //let team = Team.find(id)
     render(PlayersController.playersHTML(team), 'table.players tbody')
-  })
+  });
 
   // $('body').on('click', 'table.teams tr', function(){
   //   let id = parseInt(this.id.replace("team-", ""))
@@ -32,8 +32,31 @@ $(function(){
     player.destroy()
     let team = Team.find(player.teamID)
     render(PlayersController.playersHTML(team), 'table.players tbody')
-  })
+  });
 
+  $('.create-team').submit (function(input) {
+    let name = $('input#team-name').val()
+    let city = $('input#team-city').val()
+    let newTeam = new Team(name, city)
+    debugger
+    addToDropDown()
+    event.preventDefault()
+  });
+
+  $('.create-player').submit (function(input) {
+  //debugger
+    let name = $('input#player-name').val()
+    let hometown = $('input#player-hometown').val()
+    let age = parseInt($('input#player-age').val())
+    let points = parseInt($('input#player-points').val())
+    let team = $('input#player-team').val().toLowerCase()
+
+    let foundTeam = Team.findByName(team)
+
+    let player = new Player(name, hometown, age, points, foundTeam)
+    render(PlayersController.playersHTML(foundTeam), 'table.players tbody')
+    event.preventDefault()
+  });
 
 // renderPlayer();
 // deletePlayer();
@@ -63,10 +86,10 @@ function render(html,into){
 //   })
 // }
 
-function createPlayer(){
-
-}
-
-function createTeam(){
-
-}
+// function createPlayer(){
+//
+// }
+//
+// function createTeam(){
+//
+// }
