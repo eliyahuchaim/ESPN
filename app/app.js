@@ -45,7 +45,7 @@ function addToDropDown() {
     let teamHTML = store.teams.map(function(team) {
       return team.teamDropDown()
     }).join(" ")
-    render(teamHTML, '.teams-dropdown select')
+    render('<option disabled selected value> select a team' + teamHTML, '.teams-dropdown select')
   }
 }
 
