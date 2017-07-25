@@ -9,11 +9,18 @@
     integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
     crossorigin="anonymous"></script>
   </head>
+
   <center> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQq6RFCJzTjo9Umoytu7eZ6QP0Pqp1MTOO5M6yRbzkKDjRdIaMEymcVng">
-    <h2>Add a Team</h2>
+    <div class="team-image">
+      <img src="http://cdn.bleacherreport.net/images/team_logos/328x328/nba.png" align="left" style="width:200px;height:200px;">
+    </div>
+  </center>
+
+    <center><h2>Add a Team</h2>
     <form class="create-team" action="index.html" method="post">
       <input type="text" placeholder="name" name="team-name" id="team-name">
       <input type="text" placeholder="city" name="team-city" id="team-city">
+      <input type="text" placeholder="image link" name="team-image" id="team-image">
       <input type="submit" value="Add Team" id="submit">
     </form>
     <h2>Add a Player</h2>
@@ -30,12 +37,13 @@
   <body>
   <div class="container">
 
-
+    <center>
     <div class="teams-dropdown">
     <select >
       <option>Team</option>
     </select>
     </div>
+    </center>
     <table class="table players">
       <thead>
       <tr>

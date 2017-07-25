@@ -4,9 +4,10 @@ function createTeam(){
 
   return class Team{
 
-    constructor(name, city){
+    constructor(name, city, image){
       this.name = name;
       this.city = city;
+      this.teamImage = image
       this.id = ++TeamId
       store.teams.push(this)
       TeamsController.show()
@@ -17,6 +18,10 @@ function createTeam(){
         <td>${this.name}</td>
         <td>${this.city}</td>
       </tr>`
+    }
+
+    mainTeamImage(){
+      return `${this.teamImage}`
     }
 
 
