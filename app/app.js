@@ -16,7 +16,7 @@ $(function(){
     let team = Team.findByName(teamName)
     //let id = parseInt(this.id)
     //let team = Team.find(id)
-    render(PlayersController.playersHTML(team), 'table.players')
+    render(PlayersController.playersHTML(team), 'table.players tbody')
   })
 
   // $('body').on('click', 'table.teams tr', function(){
@@ -31,7 +31,7 @@ $(function(){
     let player = Player.find(parseInt(this.id))[0]
     player.destroy()
     let team = Team.find(player.teamID)
-    render(PlayersController.playersHTML(team), 'table.players')
+    render(PlayersController.playersHTML(team), 'table.players tbody')
   })
 
 
